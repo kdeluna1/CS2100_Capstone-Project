@@ -174,3 +174,16 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+
+.selected-city-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.selected-details-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
