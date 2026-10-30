@@ -123,3 +123,54 @@ section h2 {
 .input-field:focus {
   border-color: var(--btn-primary);
 }
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;    
+}
+
+.btn-primary {
+  background-color: var(--btn-primary);
+  color: var(--btn-primary-text);
+  border: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-unit {
+  background-color: transparent;
+  color: var(--text-muted);
+  border-color: var(--border-color);
+}
+
+.btn-unit.active {
+  background-color: var(--btn-dark);
+  color: var(--text-primary);
+  border-color: var(--btn-primary);
+}
+
+.btn-save {
+  background-color: var(--card-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-weight: 800;
+}
+
+.btn-save:hover {
+  background-color: var(--border-active);
+}
+
+.selected-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
