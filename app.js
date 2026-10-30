@@ -24,3 +24,13 @@ class WeatherDataModel {
     });
   }
 }
+
+async function executePipeline(city = "Atlanta") {
+    try{
+        console.log("Testing")
+    } catch (error) {
+        console.error("Fetch Error", error.message);
+    }
+}
+
+executePipeline("Atlanta");
