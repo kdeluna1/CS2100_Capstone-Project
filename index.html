@@ -11,9 +11,11 @@
 
 <body>
     <header>
-        <h1 class="title">HORIZON</h1>
+        <h1 class="title" href="index.html">HORIZON</h1>
         <nav aria-label="Main navigation">
-            <a href="index.html">Home</a><a href="cities.html">Saved Cities</a><a href="about.html">About</a>
+            <a href="index.html">Home</a>
+            <a href="cities.html">Saved Cities</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
     <main>
@@ -37,6 +39,21 @@
                         <p id="detail-feels-like">Feels Like 69°F</p>
                         <p id="detail-humidity-wind">Humidity 20% | Wind 8 mph NE</p>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="card results-section" aria-label="Forecasts">
+            <span class="section-label">RESULTS</span>
+            <div class="forecast-box">
+                <span class="forecast-title">Hourly Forecast</span>
+                <div class="chart-container">
+                    <canvas id="hourlyChart"></canvas>
+                </div>
+            </div>
+            <div class="forecast-box" style="margin-top: 24px;">
+                <span class="forecast-title">5-Day Forecast</span>
+                <div class="chart-container">
+                    <canvas id="dailyChart"></canvas>
                 </div>
             </div>
         </section>
