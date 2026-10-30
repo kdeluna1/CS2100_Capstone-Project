@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,39 @@
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1 class="title">HORIZON</h1>
         <nav aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="cities.html">Cities</a><a href="about.html">About</a>
-      </nav>
+            <a href="index.html">Home</a><a href="cities.html">Saved Cities</a><a href="about.html">About</a>
+        </nav>
     </header>
-    <main></main>
+    <main>
+        <section class="search">
+            <h2>FIND A CITY</h2>
+            <form class="search-form">
+                <input id="city-input" type="search" placeholder="Enter a city (e.g., Atlanta)" required>
+                <button type="submit" id="search-btn" class="btn btn-primary">SEARCH</button>
+                <button type="button" id="unit-imperial" class="btn btn-unit active">Imperial (°F)</button>
+                <button type="button" id="unit-metric" class="btn btn-unit">Metric (°C)</button>
+            </form>
+        </section>
+        <section class="selectied-city">
+            <h2>SELECTED CITY</h2>
+            <div class="selected-content">
+                <h3 class="selected-city-title" id="detail-city-name">ATLANTA, GA</h3>
+                <div class="selected-details-wrapper">
+                    <div class="detail-temp" id="detail-temp">67°F</div>
+                    <div class="detail-stats">
+                        <p id="detail-condition">Clear Skies</p>
+                        <p id="detail-feels-like">Feels Like 69°F</p>
+                        <p id="detail-humidity-wind">Humidity 20% | Wind 8 mph NE</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
