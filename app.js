@@ -2,13 +2,13 @@ const API_KEY = "53632f7030cac32ed1df9f8a19010344";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";
 
 class WeatherDataModel {
-    constructor(rawApiResponse) {
-        this.city = rawApiResponse.city.name;
-        this.country = rawApiResponse.city.country;
-        this.forecast = this.cleanForecastList(rawApiResponse.list);
-    }
+  constructor(rawApiResponse) {
+    this.city = rawApiResponse.city.name;
+    this.country = rawApiResponse.city.country;
+    this.forecast = this.cleanForecastList(rawApiResponse.list);
+  }
 
-    cleanForecastList(listArray) {
+  cleanForecastList(listArray) {
     return listArray.map(item => {
       return {
         timestamp: item.dt,
@@ -26,11 +26,20 @@ class WeatherDataModel {
 }
 
 async function executePipeline(city = "Atlanta") {
-    try{
-        console.log("Testing")
-    } catch (error) {
-        console.error("Fetch Error", error.message);
+  try {
+    const url = `${BASE_URL}?q=${encodeURIComponent(city)}&units=imperial&appid=${API_KEY}`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`API HTTP Error! Status: ${response.status} - ${response.statusText}`);
     }
+
+    const data = await response.json();
+
+  } catch (error) {
+    console.error("Fetch Error", error.message);
+  }
 }
 
 executePipeline("Atlanta");
