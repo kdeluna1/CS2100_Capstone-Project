@@ -28,7 +28,6 @@ class WeatherDataModel {
 async function executePipeline(city = "Atlanta") {
   try {
     const url = `${BASE_URL}?q=${encodeURIComponent(city)}&units=imperial&appid=${API_KEY}`;
-
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -36,7 +35,15 @@ async function executePipeline(city = "Atlanta") {
     }
 
     const data = await response.json();
+    const weatherData = new WeatherDataModel(data);
 
+    console.log("Parsed & Cleaned Weather Data Object Array");
+    console.log("Location:", `${weatherData.city}, ${weatherData.country}`);
+    console.log("Total Entries Extracted:", weatherData.forecast.length);
+    console.log("Forecast Array (Objects):", weatherData.forecast);
+    console.log("\nSample Single Entry Object Structure:", weatherData.forecast[0]);
+
+    return weatherData;
   } catch (error) {
     console.error("Fetch Error", error.message);
   }
